@@ -3,7 +3,6 @@ var textview = document.forms['calculator']['textview'];
 
 function insert(num)
 {
-    //console.log('hocche');
     if(equal)
     {
         exp = num;
