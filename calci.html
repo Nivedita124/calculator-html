@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculator</title>
+    <!-- <script> 
+        //function that display value 
+        function insert(val) 
+        { 
+            document.getElementById("display").value+=val;
+        } 
+        //function that evaluates the digit and return result 
+        function equal() 
+        { 
+            let x = document.getElementById("display").value; 
+            let y = eval(x);
+            document.getElementById("display").value = y;
+        } 
+        
+        //function that clear the display 
+        function clr() 
+        { 
+            document.getElementById("display").value = '';
+        } 
+    </script>     -->
+</head>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+}
+.but{
+    width: 50px;
+    height: 50px;
+    font-size: 29px;
+    margin: 2px;
+    cursor: pointer;
+    filter: drop-shadow(3px 3px 3px black);
+}
+.but1{
+    width: 60px;
+    height: 50px;
+    font-size: 28px;
+    margin: 2px;
+    cursor: pointer;
+    filter: drop-shadow(3px 3px 3px black);
+}
+.but:hover, .but1:hover{
+    background-color: gray;
+}
+.textbar{
+    width: 340px;
+    height: 50px;
+    margin: 0px 0px 10px 0px;
+    font-size: 25px;
+    text-align: right;
+    filter: drop-shadow(3px 3px 3px black);
+}
+body{
+    background: linear-gradient(to right, rgb(104, 87, 146), rgb(235, 85, 85));
+}
+form{
+    width: 345px;
+    margin: 150px auto;
+    padding: 20px 20px;
+    background: steelblue;
+    border-radius: 20px;
+    filter: drop-shadow(3px 5px 5px black);
+}
+.demo{
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+}
+.demo li a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+.demo li a:hover{
+    color: aliceblue;
+}
+</style>
+<body>
+    <div class="main">
+        <form name="calculator">
+            <ul class="demo">
+                <li><a href="#">View</a></li>
+                <li><a href="#">Edit</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+            <input class="textbar" type="text" name="textview" disabled>
+            <table>
+                <tr>
+                    <td><input class="but" type="button" value="7" onclick="insert('7')"></td>
+                    <td><input class="but" type="button" value="8" onclick="insert('8')"></td>
+                    <td><input class="but" type="button" value="9" onclick="insert('9')"></td>
+                    <td><input class="but" type="button" value="+" onclick="insertop('+')"></td>
+                    <td><input class="but" type="button" value="&#8730" onclick="SR('sr')"></td>
+                    <td><input class="but1" type="button" value="x^2" onclick="SR('s')"></td>
+                </tr>
+                <tr>
+                    <td><input class="but" type="button" value="4" onclick="insert('4')"></td>
+                    <td><input class="but" type="button" value="5" onclick="insert('5')"></td>
+                    <td><input class="but" type="button" value="6" onclick="insert('6')"></td>
+                    <td><input class="but" type="button" value="-" onclick="insertop('-')"></td>
+                    <td><input class="but" type="button" value="&#8731" onclick="SR('cr')"></td>
+                    <td><input class="but1" type="button" value="x^3" onclick="SR('c')"></td>
+                </tr>
+                <tr>
+                    <td><input class="but" type="button" value="1" onclick="insert('1')"></td>
+                    <td><input class="but" type="button" value="2" onclick="insert('2')"></td>
+                    <td><input class="but" type="button" value="3" onclick="insert('3')"></td>
+                    <td><input class="but" type="button" value="*" onclick="insertop('*')"></td>
+                    <td><input class="but" type="button" value="x!" onclick="SR('f')"></td>
+                    <td><input class="but1" type="button" value="C" onclick="back()"></td>
+                </tr>
+                <tr>
+                    <td><input class="but" type="button" value="0" onclick="insert('0')"></td>
+                    <td><input class="but" type="button" value="." onclick="insertdec()"></td>
+                    <td><input class="but" type="button" value="=" onclick="equalto()"></td>
+                    <td><input class="but" type="button" value="/" onclick="insertop('/')"></td>
+                    <td><input class="but" type="button" value="log" onclick="SR('l')"></td>
+                    <td><input class="but1" type="button" value="AC" onclick="clr()"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+<script src="calci.js"></script>
+</html>
